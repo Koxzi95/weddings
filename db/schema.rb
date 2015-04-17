@@ -95,4 +95,12 @@ ActiveRecord::Schema.define(version: 20150320225227) do
 
   add_index "viewings", ["room_id"], name: "index_viewings_on_room_id"
 
+  create_table "bookings", force: :cascade do |t|
+    t.string "name"
+    t.datetime "starts_at"
+    t.timestamps null: false
+    t.integer  "room_id"
+    t.integer  "user_id"
+  end
+
 end

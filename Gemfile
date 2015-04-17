@@ -64,6 +64,8 @@ gem 'viewable', '~> 0.5.16'
 # Mail Form gem for sending mail directly from a form.
 gem 'mail_form', '~> 1.5.0'
 
+gem "simple_calendar", "~> 1.1.0"
+
 # Bundle on OSX and Linux only. (including deployment)
 platforms :ruby do
 	# Unicorn for worker process management (won't bundle on non-unix)

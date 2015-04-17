@@ -1,4 +1,8 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :booking do
+    name "MyString"
+starts_at "2015-04-17 15:44:28"
+  end
+
 
 	# :name, :description, :size, :capacity, :price, :picture, :rmcat_id
 	factory :room do

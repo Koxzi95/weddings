@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Starts at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.name %></td>
+        <td><%= booking.starts_at %></td>
+        <td><%= link_to 'Show', booking %></td>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>
+
+<div id="calendar">
+  <%#= month_calendar td: month_calendar_td_options do |date| %>
+  <%#= month_calendar td: ->(start_date, current_calendar_date) { {class: "calendar-date", data: {day: current_calendar_date}} }, events: @bookings do |date, bookings| %>
+    <%= month_calendar class: "calendar", events: @bookings do |date, bookings| %>
+      <%= date %>
+        <% bookings.each do |booking| %>
+        <div>
+          <%= booking.name %>
+        </div>
+      <% end %>
+    <% end %>
+  <%# end %>
+</div>
